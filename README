@@ -1,0 +1,34 @@
+3D object viewer, by Jacob Emmert-Aronson
+
+This project was a homework assignment in a computer graphics class I
+took during my junior year of undergraduate, and makes use of much of
+the knowledge I learned throughout the course of the semester.  It
+renders a simple scene consisting of a teapot and a sphere via one of
+two modes.  The default mode is a ray-tracing pipeline which I
+implemented largely from scratch, and the secondary wire-frame mode is
+rendered via OpenGL's fixed-function pipeline, allowing objects to be
+selected and moved around easily.  Keyboard and mouse controls can be
+found in the functions "keyboard" and "mouseButton" in main.cc.
+
+dependencies:
+  This program expects GL/gl.h, GL/glu.h, and GL/glut.h in the include
+  path, and the GL, GLU, and glut libraries in the library path.
+  Installing freeglut is a recommended way to do this (e.g., the
+  freeglut3-dev package on Debian).
+
+building and running:
+  Type "make" at the command line to build, and either "make run" or
+  "./viewer.bin" to run the program.
+
+additional functionality: Much of the interface of the previous
+  fixed-function pipeline assignment has been retained, with keys
+  remapped to not conflict with the current requirements.  In
+  particular, pressing 'z' will switch to selection mode, in which all
+  objects are displayed in wireframe.  Number keys affect translations
+  of the selected object as normal, the keys in the same columns as
+  's' through 'd' apply rotations in global coordinates, those in the 'h'
+  and 'j' columns apply rotations in local coordinates, the 'f' and
+  'v' keys apply scaling, 'a' and 'b' toggle axes and bounding boxes,
+  respectively (only displayed in selection mode), 'g' snaps the view
+  to either the selected object or the global origin, and 'p' toggles
+  the projection (perspective or orthographic).
